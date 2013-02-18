@@ -6,7 +6,8 @@ int counter;
 int MAXROW = 10;
 
 float prob_koru = .9; // Chance of a koru being drawn on each line
-float koru_probs[] = {.8, .1, .1 };
+// float koru_probs[] = {.8, .1, .1 };
+float koru_probs[] = {.95};
 float prob_trip = .1; // Chance of each koru being a triple
 
 void setup() {
@@ -91,7 +92,7 @@ void draw() {
 }
 
 void drawKoru(int x, int y, int h, color a, color b) {
-  int p = h / 20 + 5;    // Control size of gaps between korus.
+  int p = h / 20 + 2;    // Control size of gaps between korus.
   int e = h - p;
   big.fill(b);
   big.rect(x + e, y, 2 * h, h);
@@ -101,7 +102,7 @@ void drawKoru(int x, int y, int h, color a, color b) {
 }
 
 void drawTriple(int x, int y, int h, color a, color b) {
-  int p = h / 20 + 5;    // Control size of gaps between korus.
+  int p = h / 20 + 2;    // Control size of gaps between korus.
   int e = h - p;
   big.fill(b);
   big.rect(x + e, y, 4 * h, h);
