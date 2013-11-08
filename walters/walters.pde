@@ -3,21 +3,18 @@ import java.util.Arrays;
 PGraphics big;
 boolean drawLight;
 int counter;
-int MAXROW = 10;
 
-float prob_koru = .9; // Chance of a koru being drawn on each line
-// float koru_probs[] = {.8, .1, .1 };
-float koru_probs[] = {.95};
+float koru_probs[] = {.9, .1, .1 };
 float prob_trip = .1; // Chance of each koru being a triple
 
 void setup() {
 
-  big = createGraphics(4800, 7800, JAVA2D);
+  // Draw extra large and then scale down for viewing on screen
+  big = createGraphics(3200, 4800, JAVA2D);
   big.beginDraw();
-  //big.smooth(8);
   big.noStroke();
 
-  size(big.width / 10, big.height / 10);
+  size(big.width / 5, big.height / 5);
   background(0);
   noLoop();
 
@@ -33,10 +30,11 @@ void keyPressed() {
 }
 
 void draw() {
-  //color light = color(50,100 + random(155), 100 + random(155));
-  color light = color(255,255,255);
+
+  color light = color(50,100 + random(155), 100 + random(155));
   color dark = color(0,0,0);
-  int row_height = int(random(100) + 150);
+
+  int row_height = 150;
   drawLight = false;
   Row prev_row = new Row();
 
